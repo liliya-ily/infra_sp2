@@ -1,12 +1,12 @@
-from django.shortcuts import render, get_object_or_404
-from django.db.models import aggregates, Avg
-from rest_framework import request, viewsets
+from django.shortcuts import get_object_or_404
+from django.db.models import Avg
+from rest_framework import viewsets
 from rest_framework.exceptions import ValidationError
 from rest_framework.pagination import PageNumberPagination
 from .models import Review, Comment
 from .serializers import ReviewSerializer, CommentSerializer
 from api_titles.models import Title
-from api_user.permissions import ModeratorOrAuthorPerm, IsOwnerOrReadOnly
+from api_user.permissions import ModeratorOrAuthorPerm
 
 
 class ReviewViewSet(viewsets.ModelViewSet):

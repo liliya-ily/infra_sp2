@@ -1,5 +1,4 @@
 from django.db import models
-from api_user.models import User
 
 
 class Category(models.Model):
