@@ -15,7 +15,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Category',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=300)),
                 ('slug', models.SlugField(unique=True)),
             ],
@@ -23,7 +24,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Genre',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=300)),
                 ('slug', models.SlugField(unique=True)),
             ],
@@ -31,13 +33,16 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Title',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=300)),
                 ('year', models.IntegerField(blank=True, null=True)),
                 ('description', models.CharField(blank=True, max_length=1000)),
                 ('rating', models.IntegerField(blank=True, null=True)),
-                ('category', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='api_titles.Category')),
-                ('genre', models.ManyToManyField(blank=True, null=True, to='api_titles.Genre', verbose_name='Жанр')),
+                ('category', models.ForeignKey(blank=True, null=True,
+                 on_delete=django.db.models.deletion.SET_NULL, to='api_titles.Category')),
+                ('genre', models.ManyToManyField(blank=True, null=True,
+                 to='api_titles.Genre', verbose_name='Жанр')),
             ],
         ),
     ]
